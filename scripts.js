@@ -84,7 +84,7 @@ function round() {
   // 3. Velja gildi fyrir tölvu með `Math.floor(Math.random() * 3) + 1` sem skilar heiltölu á [1, 3]
   let computer = Math.floor(Math.random() * 3) + 1;
   // 4. Nota `checkGame()` til að finna hver vann
-  let result = checkGame();
+  result = checkGame();
   // 5. Birta hver vann
   if (result === 0) {
     alert(`Leikmaður: ${input}, tölva: ${computer}. Jafntefli`)
