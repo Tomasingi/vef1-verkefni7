@@ -145,5 +145,6 @@ function games() {
     console.log(`Þú hefur unnið ${wins}, eða ${(wins / total * 100).toFixed(2)}% af heild.`);
     console.log(`Þú hefur tapað ${losses}, eða ${(losses / total * 100).toFixed(2)}% af heild.`);
   }
+  return 0;
 }
 // Hér getum við ekki skrifað test þar sem fallið les úr global state
