@@ -20,9 +20,9 @@ let losses = 0;
 function isValidBestOf(bestOf) {
   return (bestOf % 2 === 1 && 0 < bestOf && bestOf < MAX_BEST_OF)
 }
-console.assert(isValidBestOf(1) === true, '1 er valid best of');
-console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
-console.assert(isValidBestOf(9) === true, '9 er valid best of');
+// console.assert(isValidBestOf(1) === true, '1 er valid best of');
+// console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
+// console.assert(isValidBestOf(9) === true, '9 er valid best of');
 
 function playAsText(play) {
   switch (play) {
@@ -36,10 +36,10 @@ function playAsText(play) {
       return 'Óþekkt';
   }
 }
-console.assert(playAsText('1') === 'Skæri', '1 táknar skæri');
-console.assert(playAsText('2') === 'Blað', '2 táknar blað');
-console.assert(playAsText('3') === 'Steinn', '3 táknar steinn');
-console.assert(playAsText('foo') === 'Óþekkt', 'Annað er óþekkt');
+// console.assert(playAsText('1') === 'Skæri', '1 táknar skæri');
+// console.assert(playAsText('2') === 'Blað', '2 táknar blað');
+// console.assert(playAsText('3') === 'Steinn', '3 táknar steinn');
+// console.assert(playAsText('foo') === 'Óþekkt', 'Annað er óþekkt');
 
 /**
  * Athugar hvort spilari eða tölva vinnur.
@@ -58,11 +58,11 @@ function checkGame(player, computer) {
   }
   return result;
 }
-console.assert(checkGame('1', '2') === 1, 'Skæri vinnur blað');
-console.assert(checkGame('2', '3') === 1, 'Blað vinnur stein');
-console.assert(checkGame('3', '1') === 1, 'Steinn vinnur skæri');
-console.assert(checkGame('1', '1') === 0, 'Skæri og skæri eru jafntefli');
-console.assert(checkGame('1', '3') === -1, 'Skæri tapar fyrir stein');
+// console.assert(checkGame('1', '2') === 1, 'Skæri vinnur blað');
+// console.assert(checkGame('2', '3') === 1, 'Blað vinnur stein');
+// console.assert(checkGame('3', '1') === 1, 'Steinn vinnur skæri');
+// console.assert(checkGame('1', '1') === 0, 'Skæri og skæri eru jafntefli');
+// console.assert(checkGame('1', '3') === -1, 'Skæri tapar fyrir stein');
 
 /**
  * Spilar einn leik.
