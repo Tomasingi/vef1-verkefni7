@@ -105,8 +105,9 @@ function play() {
   let bestOf = prompt('Hversu marga leiki skal spila?');
   // 2. Staðfesta að fjöldi leikja sé gilt gildi
   if (bestOf === 'Cancel') {
-    return;
+    return 0;
   }
+
   if (!isValidBestOf(bestOf)) {
     console.error('Ógildur fjöldi leikja.');
     return;
@@ -124,6 +125,7 @@ function play() {
     } else if (winner === 1) {
       computerWins++;
     }
+    console.log(`${playerWins}, ${computerWins}`);
   }
   // 4. Birta hvort spilari eða tölva vann
   let overallWinner = (playerWins > computerWins) ? 'Leikmaður' : 'Tölva';
