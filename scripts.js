@@ -51,13 +51,10 @@ function checkGame(player, computer) {
   if (player === 'Cancel') {
     return;
   }
-  if (!['1', '2', '3'].includes(player)) {
-    return -1;
-  }
 
   // Notar eiginleika leiksins yfir bauginn Z/3Z
   let result = (computer - player + 3) % 3;
-  if (result == 2) {
+  if (result === 2) {
     return -1;
   }
   return result;
@@ -74,13 +71,34 @@ console.assert(checkGame('1', '3') === -1, 'Skæri tapar fyrir stein');
  */
 function round() {
   // TODO útfæra
+  let result = 0;
   // 1. Spyrja um hvað spilað, ef cancel, hætta
-
+  input = prompt('Hvað skal spila?');
   // 2. Ef ógilt, tölva vinnur
+  if (input === 'Cancel') {
+    return;
+  }
+  if (!['1', '2', '3'].includes(player)) {
+    result = -1;
+  }
   // 3. Velja gildi fyrir tölvu með `Math.floor(Math.random() * 3) + 1` sem skilar heiltölu á [1, 3]
+  computer = Math.floor(Math.random() * 3) + 1;
   // 4. Nota `checkGame()` til að finna hver vann
+  result = checkGame();
   // 5. Birta hver vann
+  if (result === 0) {
+    alert('Jafntefli')
+  } else {
+    let winner = '';
+    if (result === 1) {
+      winner = 'Leikmaður';
+    } else {
+      winner = 'Tölva';
+    }
+    alert(`${winner} vann`);
+  }
   // 6. Skila hver vann
+  return result;
 }
 // Hér getum við ekki skrifað test þar sem fallið mun biðja notanda um inntak!
 
@@ -88,10 +106,26 @@ function round() {
  * Spilar leik og bætir útkomu (sigur eða tap) við í viðeigandi global breytu.
  */
 function play() {
-  // TODO útfæra
   // 1. Spyrja um fjölda leikja
+  let bestOf = prompt('Hversu marga leiki skal spila?');
   // 2. Staðfesta að fjöldi leikja sé gilt gildi
+  if (bestOf === 'Cancel') {
+    return;
+  }
+  if (!isValidBestOf(bestOf)) {
+    console.error('Ógildur fjöldi leikja');
+    return;
+  }
   // 3. Keyra fjölda leikja og spila umferð þar til sigurvegari er krýndur
+  let playerWins = 0, computerWins = 0;
+  while (playerWins < Math.floor(bestOf) && computerWins < Math.floor(bestOf)) {
+    let winner = round();
+    if (winner === '1') {
+      playerWins++;
+    } else if (winner === '-1') {
+      computerWins++;
+    }
+  }
   // 4. Birta hvort spilari eða tölva vann
 }
 // Hér getum við ekki skrifað test þar sem fallið mun biðja notanda um inntak!
@@ -100,9 +134,8 @@ function play() {
  * Birtir stöðu spilara.
  */
 function games() {
-  // TODO útfæra
   let total = wins + losses;
-  if (total % 10 == 1 && total % 100 != 11) {
+  if (total % 10 === 1 && total % 100 !== 11) {
     console.log(`Þú hefur spilað ${total} leik`);
   } else {
     console.log(`Þú hefur spilað ${total} leiki`);
