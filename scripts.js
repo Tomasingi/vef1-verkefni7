@@ -78,7 +78,7 @@ function round() {
   if (input === 'Cancel') {
     return;
   }
-  if (!['1', '2', '3'].includes(player)) {
+  if (!['1', '2', '3'].includes(input)) {
     result = -1;
   }
   // 3. Velja gildi fyrir tölvu með `Math.floor(Math.random() * 3) + 1` sem skilar heiltölu á [1, 3]
