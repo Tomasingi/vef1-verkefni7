@@ -116,7 +116,7 @@ function play() {
   while (playerWins < (bestOf / 2) && computerWins < (bestOf / 2)) {
     let winner = round();
     if (winner === 'Cancel') {
-      break;
+      return 0;
     }
 
     if (winner === 2) {
