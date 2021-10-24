@@ -132,6 +132,8 @@ function play() {
 
   // Uppfæra heildarfjölda vinninga
   (playerWins > computerWins) ? wins++ : losses++;
+
+  return 0;
 }
 // Hér getum við ekki skrifað test þar sem fallið mun biðja notanda um inntak!
 
