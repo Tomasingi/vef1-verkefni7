@@ -110,7 +110,7 @@ function play() {
 
   if (!isValidBestOf(bestOf)) {
     console.error('Ógildur fjöldi leikja.');
-    return;
+    return 1;
   }
   // 3. Keyra fjölda leikja og spila umferð þar til sigurvegari er krýndur
   let playerWins = 0, computerWins = 0;
@@ -125,7 +125,7 @@ function play() {
     } else if (winner === 1) {
       computerWins++;
     }
-    console.log(`${playerWins}, ${computerWins}`);
+    alert(`${playerWins}, ${computerWins}`);
   }
   // 4. Birta hvort spilari eða tölva vann
   let overallWinner = (playerWins > computerWins) ? 'Leikmaður' : 'Tölva';
