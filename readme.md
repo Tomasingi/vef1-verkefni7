@@ -46,9 +46,9 @@ Ef ógilt gildi er slegið inn vinnur tölva. Ef `Cancel` er valið (eða ýtt �
 
 Brotum skal skila með tveim aukastöfum.
 
-Ef engin leikkur hefur verið spilaður skal bara birta „Þú hefur spilað 0 leiki“. 
+Ef engin leikur hefur verið spilaður skal bara birta „Þú hefur spilað 0 leiki“. 
 
-EKki er krafa um að birta texta með réttri fallbeygingu með tilliti til tölu, það má birta „Þú hefur spilað 1 leiki.“.
+Ekki er krafa um að birta texta með réttri fallbeygingu með tilliti til tölu, það má birta „Þú hefur spilað 1 leiki.“.
 
 ## Netlify
 
