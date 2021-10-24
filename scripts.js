@@ -25,7 +25,7 @@ console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
 console.assert(isValidBestOf(9) === true, '9 er valid best of');
 
 function playAsText(play) {
-  switch (x) {
+  switch (play) {
     case '1':
       return 'Skæri';
     case '2':
