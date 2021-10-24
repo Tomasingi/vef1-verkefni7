@@ -82,7 +82,7 @@ function round() {
   result = checkGame(input, computer);
   // 5. Birta hver vann
   if (result === 0) {
-    alert(`Leikmaður: ${input}, tölva: ${computer}. Jafntefli`)
+    alert(`Leikmaður: ${input}, tölva: ${computer}. Jafntefli.`)
   } else {
     let winner = '';
     if (result === 1) {
@@ -90,7 +90,7 @@ function round() {
     } else {
       winner = 'Tölva';
     }
-    alert(`Leikmaður: ${input}, tölva: ${computer}. ${winner} vann`);
+    alert(`Leikmaður: ${input}, tölva: ${computer}. ${winner} vann.`);
   }
   // 6. Skila hver vann
   return result;
@@ -108,12 +108,12 @@ function play() {
     return;
   }
   if (!isValidBestOf(bestOf)) {
-    console.error('Ógildur fjöldi leikja');
+    console.error('Ógildur fjöldi leikja.');
     return;
   }
   // 3. Keyra fjölda leikja og spila umferð þar til sigurvegari er krýndur
   let playerWins = 0, computerWins = 0;
-  while (playerWins < Math.floor(bestOf) && computerWins < Math.floor(bestOf)) {
+  while (playerWins < (bestOf / 2) && computerWins < (bestOf / 2)) {
     let winner = round();
     if (winner === 'Cancel') {
       break;
@@ -126,6 +126,8 @@ function play() {
     }
   }
   // 4. Birta hvort spilari eða tölva vann
+  let overallWinner = (playerWins > computerWins) ? 'Leikmaður' : 'Tölva';
+  alert(`${overallWinner} vann leikinn!`);
 }
 // Hér getum við ekki skrifað test þar sem fallið mun biðja notanda um inntak!
 
@@ -135,9 +137,9 @@ function play() {
 function games() {
   let total = wins + losses;
   if (total % 10 === 1 && total % 100 !== 11) {
-    console.log(`Þú hefur spilað ${total} leik`);
+    console.log(`Þú hefur spilað ${total} leik.`);
   } else {
-    console.log(`Þú hefur spilað ${total} leiki`);
+    console.log(`Þú hefur spilað ${total} leiki.`);
   }
   if (total > 0) {
     console.log(`Þú hefur unnið ${wins}, eða ${(wins / total * 100).toFixed(2)}% af heild.`);
