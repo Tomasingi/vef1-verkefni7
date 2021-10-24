@@ -48,10 +48,6 @@ console.assert(playAsText('foo') === 'Óþekkt', 'Annað er óþekkt');
  * @returns -1 ef tölva vann, 0 ef jafntefli, 1 ef spilari vann
  */
 function checkGame(player, computer) {
-  if (player === 'Cancel' || player == '') {
-    return;
-  }
-
   // Notar eiginleika leiksins yfir bauginn Z/3Z
   let result = (computer - player + 3) % 3;
   console.log(result);
@@ -76,8 +72,8 @@ function round() {
   // 1. Spyrja um hvað spilað, ef cancel, hætta
   let input = prompt('Hvað skal spila?');
   // 2. Ef ógilt, tölva vinnur
-  if (input === 'Cancel') {
-    return;
+  if (input === 'Cancel' || input == '') {
+    return 'Cancel';
   }
   if (!['1', '2', '3'].includes(input)) {
     result = -1;
@@ -121,9 +117,13 @@ function play() {
   let playerWins = 0, computerWins = 0;
   while (playerWins < Math.floor(bestOf) && computerWins < Math.floor(bestOf)) {
     let winner = round();
-    if (winner === '1') {
+    if (winner === 'Cancel') {
+      break;
+    }
+
+    if (winner === 2) {
       playerWins++;
-    } else if (winner === '-1') {
+    } else if (winner === 1) {
       computerWins++;
     }
   }
