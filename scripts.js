@@ -125,11 +125,13 @@ function play() {
     } else if (winner === -1) {
       computerWins++;
     }
-    alert(`${playerWins}, ${computerWins}`);
   }
   // 4. Birta hvort spilari eða tölva vann
   let overallWinner = (playerWins > computerWins) ? 'Leikmaður' : 'Tölva';
   alert(`${overallWinner} vann leikinn!`);
+
+  // Uppfæra heildarfjölda vinninga
+  (playerWins > computerWins) ? wins++ : losses++;
 }
 // Hér getum við ekki skrifað test þar sem fallið mun biðja notanda um inntak!
 
