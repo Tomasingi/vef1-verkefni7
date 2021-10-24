@@ -73,7 +73,7 @@ function round() {
   // TODO útfæra
   let result = 0;
   // 1. Spyrja um hvað spilað, ef cancel, hætta
-  input = prompt('Hvað skal spila?');
+  let input = prompt('Hvað skal spila?');
   // 2. Ef ógilt, tölva vinnur
   if (input === 'Cancel') {
     return;
@@ -82,12 +82,12 @@ function round() {
     result = -1;
   }
   // 3. Velja gildi fyrir tölvu með `Math.floor(Math.random() * 3) + 1` sem skilar heiltölu á [1, 3]
-  computer = Math.floor(Math.random() * 3) + 1;
+  let computer = Math.floor(Math.random() * 3) + 1;
   // 4. Nota `checkGame()` til að finna hver vann
-  result = checkGame();
+  let result = checkGame();
   // 5. Birta hver vann
   if (result === 0) {
-    alert('Jafntefli')
+    alert(`Leikmaður: ${input}, tölva: ${computer}. Jafntefli`)
   } else {
     let winner = '';
     if (result === 1) {
@@ -95,7 +95,7 @@ function round() {
     } else {
       winner = 'Tölva';
     }
-    alert(`${winner} vann`);
+    alert(`Leikmaður: ${input}, tölva: ${computer}. ${winner} vann`);
   }
   // 6. Skila hver vann
   return result;
