@@ -18,7 +18,7 @@ let losses = 0;
  * @return {boolean} true eða false
  */
 function isValidBestOf(bestOf) {
-  return (bestOf % 2 === 1 && bestOf <= MAX_BEST_OF)
+  return (bestOf % 2 === 1 && 0 < bestOf && bestOf < MAX_BEST_OF)
 }
 console.assert(isValidBestOf(1) === true, '1 er valid best of');
 console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
