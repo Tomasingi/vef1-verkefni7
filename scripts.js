@@ -50,9 +50,6 @@ function playAsText(play) {
 function checkGame(player, computer) {
   // Notar eiginleika leiksins yfir bauginn Z/3Z
   let result = (computer - player + 3) % 3;
-  console.log(player);
-  console.log(computer);
-  console.log(result);
   if (result === 2) {
     return -1;
   }
@@ -69,12 +66,11 @@ function checkGame(player, computer) {
  * @return {boolean} -1 ef tölva vann, 0 ef jafntefli, 1 ef spilari vann
  */
 function round() {
-  // TODO útfæra
   let result = 0;
   // 1. Spyrja um hvað spilað, ef cancel, hætta
   let input = prompt('Hvað skal spila?');
   // 2. Ef ógilt, tölva vinnur
-  if (input === 'Cancel' || input == '') {
+  if (input === 'Cancel' || input == null) {
     return 'Cancel';
   }
   if (!['1', '2', '3'].includes(input)) {
