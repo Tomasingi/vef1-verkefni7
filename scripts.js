@@ -48,12 +48,13 @@ console.assert(playAsText('foo') === 'Óþekkt', 'Annað er óþekkt');
  * @returns -1 ef tölva vann, 0 ef jafntefli, 1 ef spilari vann
  */
 function checkGame(player, computer) {
-  if (player === 'Cancel') {
+  if (player === 'Cancel' || player == '') {
     return;
   }
 
   // Notar eiginleika leiksins yfir bauginn Z/3Z
   let result = (computer - player + 3) % 3;
+  console.log(result);
   if (result === 2) {
     return -1;
   }
