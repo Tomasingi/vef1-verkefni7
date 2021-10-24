@@ -30,7 +30,7 @@ Umferð biður notanda um að velja skæri, blað, eða stein þar sem skæri er
 * Steinn vinnur skæri
 * Ef sama er valið er jafntefli og umferð spiluð aftur
 
-Birta skal hvað bæði spilari og tölvu valdi og hvernig umferð fór.
+Birta skal hvað bæði spilari og tölva valdi og hvernig umferð fór.
 
 Ef ógilt gildi er slegið inn vinnur tölva. Ef `Cancel` er valið (eða ýtt á `ESC`) skal hætta leik.
 

@@ -18,7 +18,12 @@ let losses = 0;
  * @return {boolean} true eða false
  */
 function isValidBestOf(bestOf) {
-  return (bestOf % 2 === 1 && 0 < bestOf && bestOf < MAX_BEST_OF)
+  if (bestOf === null) {
+    return null;
+  }
+
+  // Athuga skilyrði
+  return (bestOf % 2 === 1 && 0 < bestOf && bestOf < MAX_BEST_OF);
 }
 // console.assert(isValidBestOf(1) === true, '1 er valid best of');
 // console.assert(isValidBestOf(2) === false, '2 er ekki er valid best of');
@@ -70,8 +75,8 @@ function round() {
   // 1. Spyrja um hvað spilað, ef cancel, hætta
   let input = prompt('Hvað skal spila?');
   // 2. Ef ógilt, tölva vinnur
-  if (input === 'Cancel' || input == null) {
-    return 'Cancel';
+  if (input == null) {
+    return null;
   }
   if (!['1', '2', '3'].includes(input)) {
     result = -1;
@@ -104,7 +109,7 @@ function play() {
   // 1. Spyrja um fjölda leikja
   let bestOf = prompt('Hversu marga leiki skal spila?');
   // 2. Staðfesta að fjöldi leikja sé gilt gildi
-  if (bestOf === 'Cancel') {
+  if (bestOf === null) {
     return 0;
   }
 
@@ -116,7 +121,7 @@ function play() {
   let playerWins = 0, computerWins = 0;
   while (playerWins < (bestOf / 2) && computerWins < (bestOf / 2)) {
     let winner = round();
-    if (winner === 'Cancel') {
+    if (winner === null) {
       return 0;
     }
 
