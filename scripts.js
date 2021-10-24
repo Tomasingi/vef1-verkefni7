@@ -50,6 +50,8 @@ console.assert(playAsText('foo') === 'Óþekkt', 'Annað er óþekkt');
 function checkGame(player, computer) {
   // Notar eiginleika leiksins yfir bauginn Z/3Z
   let result = (computer - player + 3) % 3;
+  console.log(player);
+  console.log(computer);
   console.log(result);
   if (result === 2) {
     return -1;
