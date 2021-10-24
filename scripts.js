@@ -120,9 +120,9 @@ function play() {
       return 0;
     }
 
-    if (winner === 2) {
+    if (winner === 1) {
       playerWins++;
-    } else if (winner === 1) {
+    } else if (winner === -1) {
       computerWins++;
     }
     alert(`${playerWins}, ${computerWins}`);
