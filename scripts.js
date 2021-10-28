@@ -74,10 +74,10 @@ function round() {
   let result = 0;
   // 1. Spyrja um hvað spilað, ef cancel, hætta
   let input = prompt('Hvað skal spila?');
-  // 2. Ef ógilt, tölva vinnur
   if (input == null) {
     return null;
   }
+  // 2. Ef ógilt, tölva vinnur
   if (!['1', '2', '3'].includes(input)) {
     result = -1;
   }
