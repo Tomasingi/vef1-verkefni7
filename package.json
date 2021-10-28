@@ -2,10 +2,13 @@
   "name": "vef1-2021-v7",
   "version": "1.0.0",
   "scripts": {
-    "dev": "browser-sync start --server --files scripts.js index.html"
+    "dev": "browser-sync start --server --files scripts.js index.html",
+    "build:html": "cp index.html build/index.html",
+    "build:js": "cp scripts.js build/scripts.js",
+    "build": "npm run build:html && npm run build:js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tómas Ingi Hrólfsson",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.27.5"
